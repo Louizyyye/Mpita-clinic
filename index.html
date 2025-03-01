@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mpita Clinic - Transforming your care</title>
+    <style>
+        :root {
+            --primary-blue: #0057b8;
+            --dark-blue: #003366;
+            --light-gray: #f5f5f5;
+            --text-dark: #333;
+            --text-light: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            color: var(--text-dark);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            font-weight: bold;
+            font-size: 24px;
+            color: var(--dark-blue);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-dropdown {
+            position: relative;
+            padding: 10px 0;
+            cursor: pointer;
+        }
+        
+        .nav-dropdown:hover {
+            color: var(--primary-blue);
+        }
+        
+        .nav-dropdown::after {
+            content: "▼";
+            font-size: 8px;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+        
+        .user-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            border: none;
+        }
+        
+        .btn-outline {
+            border: 1px solid var(--primary-blue);
+            color: var(--primary-blue);
+            background: transparent;
+        }
+        
+        .search-icon {
+            font-size: 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-color: #000;
+            color: var(--text-light);
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: absolute;
+            bottom: 80px;
+            left: 0;
+            padding: 0 20px;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .hero-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-links a::after {
+            content: ">";
+            margin-left: 5px;
+        }
+        
+        /* Directory Section */
+        .directory {
+            padding: 50px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .alphabet-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .letter-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+        
+        .search-box {
+            margin-top: 20px;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 15px 20px 15px 50px;
+            border-radius: 50px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        
+        .search-box::before {
+            content: "🔍";
+            position: absolute;
+            left: 20px;
+            top: 15px;
+            font-size: 18px;
+            color: #666;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 50px 0;
+        }
+        
+        .feature-card {
+            padding: 30px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #666;
+        }
+        
+        /* Locations Section */
+        .locations {
+            padding: 50px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .location-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .location-card {
+            border-radius: 5px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .location-image {
+            height: 200px;
+            background-color: #ddd;
+            position: relative;
+        }
+        
+        .location-content {
+            padding: 20px;
+        }
+        
+        .location-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+        
+        .location-subtitle {
+            color: #666;
+        }
+        
+        /* Care Areas Section */
+        .care-areas {
+            padding: 50px 0;
+        }
+        
+        .care-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 30px;
+        }
+        
+        .care-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .care-item a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        /* Donation Section */
+        .donation {
+            padding: 30px 0;
+            background-color: #0c1b44;
+            color: var(--text-light);
+        }
+        
+        .donation-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .donation-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .ribbon-icon {
+            font-size: 40px;
+        }
+        
+        .donation-text {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .donation-subtext {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-blue);
+            color: var(--text-light);
+            padding: 50px 0;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            opacity: 0.8;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+            opacity: 1;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .care-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .donation-container {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">MPITA CLINIC</div>
+            <div class="nav-links">
+                <div class="nav-dropdown">Care at Mpita Clinic</div>
+                <div class="nav-dropdown">Health Library</div>
+                <div class="nav-dropdown">For Medical Professionals</div>
+                <div class="nav-dropdown">Research & Education</div>
+                <div class="nav-dropdown">Giving to Mpita Clinic</div>
+            </div>
+            <div class="user-actions">
+                <a href="#" class="btn btn-primary">Request appointment</a>
+                <a href="#" class="btn btn-outline">Log in</a>
+                <div class="search-icon">🔍</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transforming your care</h1>
+                <div class="hero-links">
+                    <a href="#" class="btn btn-primary">Request appointment</a>
+                    <a href="#">Learn how we drive innovation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Directory Section -->
+    <section class="directory">
+        <div class="container">
+            <div class="directory-grid">
+                <div>
+                    <h2>Find diseases & conditions by first letter</h2>
+                    <div class="alphabet-nav">
+                        <a href="#" class="letter-btn">A</a>
+                        <a href="#" class="letter-btn">B</a>
+                        <a href="#" class="letter-btn">C</a>
+                        <a href="#" class="letter-btn">D</a>
+                        <a href="#" class="letter-btn">E</a>
+                        <a href="#" class="letter-btn">F</a>
+                        <a href="#" class="letter-btn">G</a>
+                        <a href="#" class="letter-btn">H</a>
+                        <a href="#" class="letter-btn">I</a>
+                        <a href="#" class="letter-btn">J</a>
+                        <a href="#" class="letter-btn">K</a>
+                        <a href="#" class="letter-btn">L</a>
+                        <a href="#" class="letter-btn">M</a>
+                        <a href="#" class="letter-btn">N</a>
+                        <a href="#" class="letter-btn">O</a>
+                        <a href="#" class="letter-btn">P</a>
+                        <a href="#" class="letter-btn">Q</a>
+                        <a href="#" class="letter-btn">R</a>
+                        <a href="#" class="letter-btn">S</a>
+                        <a href="#" class="letter-btn">T</a>
+                        <a href="#" class="letter-btn">U</a>
+                        <a href="#" class="letter-btn">V</a>
+                        <a href="#" class="letter-btn">W</a>
+                        <a href="#" class="letter-btn">X</a>
+                        <a href="#" class="letter-btn">Y</a>
+                        <a href="#" class="letter-btn">Z</a>
+                        <a href="#" class="letter-btn">#</a>
+                    </div>
+                </div>
+                <div>
+                    <h2>Search diseases & conditions</h2>
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="Search">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="feature-card">
+                <h2>Healing starts here</h2>
+                <h3>The right answers the first time</h3>
+                <p>Effective treatment depends on getting the right diagnosis. Our experts diagnose and treat the toughest medical challenges.</p>
+                
+                <h3 class="mt-4">Top-ranked in the region</h3>
+                <p>Mpita Clinic has more No. 1 rankings than any other hospital in the region according to National Health Rankings. <a href="#">Learn more about our top-ranked specialties.</a></p>
+                
+                <a href="#" class="btn btn-primary mt-4">Why choose Mpita Clinic</a>
+            </div>
+            
+            <div class="feature-card">
+                <h2>World-class care for global patients</h2>
+                <p>We make it easy for patients around the world to get care from Mpita Clinic.</p>
+                
+                <a href="#" class="btn btn-primary mt-4">International services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section class="locations">
+        <div class="container">
+            <h2 class="section-title">Locations</h2>
+            <p class="section-subtitle">Learn more about Mpita Clinic locations or choose a specific location.</p>
+            
+            <a href="#" class="btn btn-outline">Explore all locations</a>
+            
+            <div class="location-grid">
+                <div class="location-card">
+                    <div class="location-image">
+                        <img src="/api/placeholder/400/300" alt="Mpita Clinic in Coastal Region">
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-title">Mpita Clinic in Coastal Region</h3>
+                        <p class="location-subtitle">Mombasa & Malindi</p>
+                    </div>
+                </div>
+                
+                <div class="location-card">
+                    <div class="location-image">
+                        <img src="/api/placeholder/400/300" alt="Mpita Clinic in Central Region">
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-title">Mpita Clinic in Central Region</h3>
+                        <p class="location-subtitle">Nairobi</p>
+                    </div>
+                </div>
+                
+                <div class="location-card">
+                    <div class="location-image">
+                        <img src="/api/placeholder/400/300" alt="Mpita Clinic in Western Region">
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-title">Mpita Clinic in Western Region</h3>
+                        <p class="location-subtitle">Kisumu & Eldoret</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Care Areas Section -->
+    <section class="care-areas">
+        <div class="container">
+            <h2 class="section-title">Featured care areas</h2>
+            <p class="section-subtitle">We solve the world's most serious and complex medical challenges.</p>
+            
+            <div class="care-list">
+                <div class="care-item">
+                    <a href="#">Bone marrow transplant</a>
+                    <span>></span>
+                </div>
+                <div class="care-item">
+                    <a href="#">Heart arrhythmia</a>
+                    <span>></span>
+                </div>
+                <div class="care-item">
+                    <a href="#">Brain aneurysm</a>
+                    <span>></span>
+                </div>
+                <div class="care-item">
+                    <a href="#">Heart valve disease</a>
+                    <span>></span>
+                </div>
+                <div class="care-item">
+                    <a href="#">Brain tumor</a>
+                    <span>></span>
+                </div>
+                <div class="care-item">
+                    <a href="#">Living-donor transplant</a>
+                    <span>></span>
+                </div>
+                <div class="care-item">
+                    <a href="#">Breast cancer</a>
+                    <span>></span>
+                </div>
+                <div class="care-item">
+                    <a href="#">Lung transplant</a>
+                    <span>></span>
+                </div>
+                <div class="care-item">
+                    <a href="#">Colon cancer</a>
+                    <span>></span>
+                </div>
+                <div class="care-item">
+                    <a href="#">Sarcoma</a>
+                    <span>></span>
+                </div>
+                <div class="care-item">
+                    <a href="#">Congenital heart disease</a>
+                    <span>></span>
+                </div>
+                <div class="care-item">
+                    <a href="#">Testicular cancer</a>
+                    <span>></span>
+                </div>
+                <div class="care-item">
+                    <a href="#">Glioma</a>
+                    <span>></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section class="donation">
+        <div class="container donation-container">
+            <div class="donation-content">
+                <div class="ribbon-icon">🎗️</div>
+                <div>
+                    <div class="donation-text">A gift to save lives!</div>
+                    <div class="donation-subtext">Your Annual Fund gift can drive advancements in cancer care.</div>
+                </div>
+            </div>
+            <a href="#" class="btn btn-primary">Give Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-section">
+                <h3>About Mpita Clinic</h3>
+                <ul class="footer-links">
+                    <li><a href="#">About this Site</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">Health Information Policy</a></li>
+                    <li><a href="#">Media Requests</a></li>
+                    <li><a href="#">News Network</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Find a doctor</h3>
+                <h3>Explore careers</h3>
+                <h3>Sign up for free e-newsletters</h3>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Medical Professionals</h3>
+                <ul class="footer-links">
+                    <li><a href="#">AskMpitaExpert</a></li>
+                    <li><a href="#">Clinical Trials</a></li>
+                    <li><a href="#">Mpita Clinic Alumni Association</a></li>
+                    <li><a href="#">Refer a Patient</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Researchers</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Research Faculty</a></li>
+                    <li><a href="#">Laboratories</a></li>
+                </ul>
+                
+                <h3>International Patients</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Appointments</a></li>
+                    <li><a href="#">Financial Services</a></li>
+                    <li><a href="#">International Locations & Offices</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Businesses</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Executive Health Program</a></li>
+                    <li><a href="#">International Business Collaborations</a></li>
+                    <li><a href="#">Facilities & Real Estate</a></li>
+                    <li><a href="#">Supplier Information</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Students</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Admissions Requirements</a></li>
+                    <li><a href="#">Degree Programs</a></li>
+                    <li><a href="#">Student & Faculty Portal</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
