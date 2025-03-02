@@ -648,62 +648,332 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <!-- Include the footer component -->
-            <?php include 'components/footer.html'; ?>
-        </div>
-            
-            <div class="footer-section">
-                <h3>Find a doctor</h3>
-                <h3>Explore careers</h3>
-                <h3>Sign up for free e-newsletters</h3>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Medical Professionals</h3>
-                <ul class="footer-links">
-                    <li><a href="#">AskMpitaExpert</a></li>
-                    <li><a href="#">Clinical Trials</a></li>
-                    <li><a href="#">Mpita Clinic Alumni Association</a></li>
-                    <li><a href="#">Refer a Patient</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Researchers</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Research Faculty</a></li>
-                    <li><a href="#">Laboratories</a></li>
-                </ul>
-                
-                <h3>International Patients</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Appointments</a></li>
-                    <li><a href="#">Financial Services</a></li>
-                    <li><a href="#">International Locations & Offices</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Businesses</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Executive Health Program</a></li>
-                    <li><a href="#">International Business Collaborations</a></li>
-                    <li><a href="#">Facilities & Real Estate</a></li>
-                    <li><a href="#">Supplier Information</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Students</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Admissions Requirements</a></li>
-                    <li><a href="#">Degree Programs</a></li>
-                    <li><a href="#">Student & Faculty Portal</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+ <head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>
+   Mpita Clinic
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+ </head>
+ <body class="bg-black text-white font-sans">
+  <div class="container mx-auto p-4">
+   <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div>
+     <div class="mb-4">
+      <button class="flex items-center justify-between w-full p-4 border border-white rounded">
+       <span class="flex items-center">
+        <i class="fas fa-user-md mr-2">
+        </i>
+        Find a doctor
+       </span>
+      </button>
+     </div>
+     <div class="mb-4">
+      <button class="flex items-center justify-between w-full p-4 border border-white rounded">
+       <span class="flex items-center">
+        <i class="fas fa-briefcase mr-2">
+        </i>
+        Explore careers
+       </span>
+      </button>
+     </div>
+     <div class="mb-4">
+      <button class="flex items-center justify-between w-full p-4 border border-white rounded">
+       <span class="flex items-center">
+        <i class="fas fa-envelope mr-2">
+        </i>
+        Sign up for free e-newsletters
+       </span>
+      </button>
+     </div>
+    </div>
+    <div>
+     <h2 class="font-bold mb-2">
+      About Mpita Clinic
+      <i class="fas fa-chevron-right">
+      </i>
+     </h2>
+     <ul>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        About this Site
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Contact Us
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Locations
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Health Information Policy
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Medicare Accountable Care Organization (ACO)
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Media Requests
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        News Network
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Price Transparency
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div>
+     <h2 class="font-bold mb-2">
+      Medical Professionals
+      <i class="fas fa-chevron-right">
+      </i>
+     </h2>
+     <ul>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        AskMpitaExpert
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Clinical Trials
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Mpita Clinic Alumni Association
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Refer a Patient
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div>
+     <h2 class="font-bold mb-2">
+      Researchers
+      <i class="fas fa-chevron-right">
+      </i>
+     </h2>
+     <ul>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Research Faculty
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Laboratories
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div>
+     <h2 class="font-bold mb-2">
+      International Patients
+      <i class="fas fa-chevron-right">
+      </i>
+     </h2>
+     <ul>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Appointments
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Financial Services
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        International Locations & Offices
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div>
+     <h2 class="font-bold mb-2">
+      Businesses
+      <i class="fas fa-chevron-right">
+      </i>
+     </h2>
+     <ul>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Executive Health Program
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        International Business Collaborations
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Facilities & Real Estate
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Supplier Information
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div>
+     <h2 class="font-bold mb-2">
+      Students
+      <i class="fas fa-chevron-right">
+      </i>
+     </h2>
+     <ul>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Admissions Requirements
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Degree Programs
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Student & Faculty Portal
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div>
+     <h2 class="font-bold mb-2">
+      Charitable Care & Financial Assistance
+      <i class="fas fa-chevron-right">
+      </i>
+     </h2>
+     <ul>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Community Health Needs Assessment
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Financial Assistance Documents – Arizona
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Financial Assistance Documents – Florida
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="hover:underline" href="#">
+        Financial Assistance Documents – Minnesota
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+  <footer class="bg-blue-900 text-white">
+   <div class="container mx-auto py-8 px-4">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+     <div class="mb-4 md:mb-0">
+      <h2 class="text-lg font-semibold mb-2">
+       Follow Mpita Clinic
+      </h2>
+      <div class="flex space-x-4">
+       <a class="text-white hover:text-gray-400" href="#">
+        <i class="fab fa-twitter">
+        </i>
+       </a>
+       <a class="text-white hover:text-gray-400" href="#">
+        <i class="fab fa-youtube">
+        </i>
+       </a>
+       <a class="text-white hover:text-gray-400" href="#">
+        <i class="fab fa-facebook-f">
+        </i>
+       </a>
+       <a class="text-white hover:text-gray-400" href="#">
+        <i class="fab fa-linkedin-in">
+        </i>
+       </a>
+       <a class="text-white hover:text-gray-400" href="#">
+        <i class="fab fa-instagram">
+        </i>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="bg-blue-800 py-4">
+    <div class="container mx-auto text-center text-sm text-gray-300">
+     <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-4 md:mb-0">
+       <a class="hover:underline mx-2" href="#">
+        Terms &amp; Conditions
+       </a>
+       <a class="hover:underline mx-2" href="#">
+        Privacy Policy
+       </a>
+       <a class="hover:underline mx-2" href="#">
+        Notice of Privacy Practices
+       </a>
+       <a class="hover:underline mx-2" href="#">
+        Notice of Nondiscrimination
+       </a>
+       <a class="hover:underline mx-2" href="#">
+        Accessibility Statement
+       </a>
+       <a class="hover:underline mx-2" href="#">
+        Advertising &amp; Sponsorship Policy
+       </a>
+       <a class="hover:underline mx-2" href="#">
+        Site Map
+       </a>
+      </div>
+      <div class="text-gray-300">
+       <span>
+        © 1998-2025 Mpita Foundation for Medical Education and Research (MFMER). All rights reserved.
+       </span>
+      </div>
+      <div class="flex items-center">
+       <span class="mr-2">
+        Language:
+       </span>
+       <select class="bg-blue-800 text-white border-none">
+        <option>
+         English
+        </option>
+        <!-- Add other languages as needed -->
+       </select>
+      </div>
+     </div>
+    </div>
+   </div>
+  </footer>
+ </body>
+</html>
 </body>
 </html>
